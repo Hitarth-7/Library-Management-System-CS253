@@ -164,6 +164,7 @@ There are initially 10 Books, 5 Students, 3 Faculties and 1 Librarian. The detai
 - A book borrowed by a user cannot be deleted by the Librarian.
 - A Student can borrow only upto 3 books. A Faculty can borrow only upto 5 books.
 - A Fine of 10Rs is levied on Student over books owned for more than 15 days. No Fine is levied on Faculties but Faculties cannot borrow a book if they own a book for more than 60 days.
+- When a book is returned, the fine is calculated from scratch to the date of returning and hence user can only pay fine properly by returning a book. The pay fine option available to the user can only pay partial fine but since the book is not returned, the fine will be freshly calculated and hence it is possible to get the same amount again while paying the fine on book return, assumption is that it doesn't make sense to pay some fine and not return a book because then more fine will be imposed again on the user, However after paying fine through the pay fine option, the user still won't be able to borrow book because the fine paid but the book is not returned. The pay fine option is not independent function but a subprocess of returning a book.
 - If the librarian removes a user and if the books are not returned, then the books are still owned by the user. The user has to explicitly return books always to make the book available again.
 - Librarians cannot delete themselves.
 - A user cannot borrow a book if there is upaid fine.
